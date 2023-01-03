@@ -1,21 +1,16 @@
 package api.mall.repository;
 
 import api.mall.domain.Member;
-import api.mall.domain.item.Item;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
+import java.util.List;
 
-@Repository
-@RequiredArgsConstructor
-public class MemberRepository {
+public interface MemberRepository {
 
-    private final EntityManager em;
+    void save(Member member);
 
-    public void save(Member member) {
-        em.persist(member);
-    }
+    Member findOne(Long id);
 
+    List<Member> findByName(String name);
+
+    List<Member> findAll();
 }
