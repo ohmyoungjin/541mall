@@ -13,16 +13,17 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Member {
-
-    public Member(String name) {
-        this.name = name;
-    }
 
     @Id
     @GeneratedValue
     @Column(name = "MEMBER_ID")
     private Long id;
+
+    private String userId;
+
+    private String password;
 
     private String name;
 

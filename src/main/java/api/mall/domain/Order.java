@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "ORDERS")
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 public class Order {
 
     @Id @GeneratedValue

@@ -23,7 +23,6 @@ public class MemberService {
     @Transactional
     public Long join(Member member) {
         validateDuplicateMember(member);
-
         memberRepository.save(member);
         return member.getId();
     }
@@ -33,7 +32,7 @@ public class MemberService {
      * 중복 회원 검증 로직
      */
     public void validateDuplicateMember(Member member) {
-        List<Member> findMembers = memberRepository.findByName(member.getName());
+        List<Member> findMembers = memberRepository.findByUser(member.getUserId());
         if (!findMembers.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 회원 입니다.");
         }

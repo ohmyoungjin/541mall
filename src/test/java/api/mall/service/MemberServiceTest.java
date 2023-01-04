@@ -27,7 +27,9 @@ class MemberServiceTest {
     @Test
     public void 회원가입() throws Exception {
         //given
-        Member member = new Member("maeng2");
+        Member member = Member.builder()
+                .userId("id")
+                .build();
         
         //when
         Long joinId = memberService.join(member);
@@ -40,8 +42,12 @@ class MemberServiceTest {
     @Test
     public void 중복회원() throws Exception {
         //given
-        Member member1 = new Member("maeng2");
-        Member member2 = new Member("maeng2");
+        Member member1 = Member.builder()
+                .userId("id")
+                .build();
+        Member member2 = Member.builder()
+                .userId("id")
+                .build();
         //when
         memberService.join(member1);
 
