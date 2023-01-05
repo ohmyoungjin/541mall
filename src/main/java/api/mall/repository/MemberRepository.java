@@ -3,6 +3,7 @@ package api.mall.repository;
 import api.mall.domain.Member;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MemberRepository {
 
@@ -13,4 +14,6 @@ public interface MemberRepository {
     List<Member> findByUser(String name);
 
     List<Member> findAll();
+
+    Optional<Member> findByLoginId(String loginId);
 }
