@@ -50,6 +50,19 @@ public class LoginController {
 
     }
 
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        System.out.println("logout>>>>>>>>>>");
+        //false로 해야 한다 true로 하면 세션을 생성하게 된다.
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            //세션 삭제 함수
+            session.invalidate();
+        }
+
+        return "redirect:/";
+    }
+
     @GetMapping("/loginlogin")
     public String check(Model model) {
         return "home";
