@@ -20,6 +20,9 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
 
+
+jwt:
+  password: testPasswordasdfsadfsadfqwerwqerasdfsdafvsa
 logging:
   level:
     org.hibernate.SQL: debug
