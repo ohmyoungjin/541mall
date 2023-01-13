@@ -1,4 +1,4 @@
-package api.mall.web.jwt.service;
+package api.mall.web.service;
 
 import api.mall.domain.Member;
 import api.mall.repository.MemberRepository;

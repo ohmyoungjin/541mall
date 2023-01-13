@@ -1,7 +1,7 @@
 package api.mall.web.controller;
 
 import api.mall.domain.Member;
-import api.mall.web.jwt.service.MemberService;
+import api.mall.web.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
